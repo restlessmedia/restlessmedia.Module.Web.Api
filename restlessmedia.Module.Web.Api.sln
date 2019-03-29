@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.489
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "restlessmedia.Module.Web.Api", "restlessmedia.Module.Web.Api.csproj", "{7F2FB4D2-439D-450D-B00C-E9AEA6DE6175}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "restlessmedia.Module.Web.Api", "src\restlessmedia.Module.Web.Api.csproj", "{7F2FB4D2-439D-450D-B00C-E9AEA6DE6175}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{5B981A60-860C-4843-A5C7-66B0504B16E8}"
 	ProjectSection(SolutionItems) = preProject
@@ -13,7 +13,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		..\README.md = ..\README.md
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "restlessmedia.Module.Web.Api.UnitTest", "..\restlessmedia.Module.Web.Api.UnitTest\restlessmedia.Module.Web.Api.UnitTest.csproj", "{561193F6-7A22-4EB7-A506-E16EC39E78D2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "restlessmedia.Module.Web.Api.UnitTest", "restlessmedia.Module.Web.Api.UnitTest\restlessmedia.Module.Web.Api.UnitTest.csproj", "{561193F6-7A22-4EB7-A506-E16EC39E78D2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

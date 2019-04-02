@@ -34,7 +34,7 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {857EF333-251B-427D-BA58-045893480D20}
 		EnterpriseLibraryConfigurationToolBinariesPathV6 = kages\EnterpriseLibrary.Common.6.0.1304.0\lib\NET45;kages\EnterpriseLibrary.TransientFaultHandling.6.0.1304.0\lib\portable-net45+win+wp8
+		SolutionGuid = {857EF333-251B-427D-BA58-045893480D20}
 	EndGlobalSection
 EndGlobal

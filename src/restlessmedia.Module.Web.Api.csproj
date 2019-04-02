@@ -94,14 +94,14 @@
     <Reference Include="RazorEngine, Version=3.10.0.0, Culture=neutral, PublicKeyToken=9ee697374c7e744a, processorArchitecture=MSIL">
       <HintPath>..\packages\RazorEngine.3.10.0\lib\net45\RazorEngine.dll</HintPath>
     </Reference>
-    <Reference Include="restlessmedia.Module, Version=0.35.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\restlessmedia.Module.0.35.0\lib\net452\restlessmedia.Module.dll</HintPath>
+    <Reference Include="restlessmedia.Module, Version=1.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\restlessmedia.Module.1.2.0\lib\net452\restlessmedia.Module.dll</HintPath>
     </Reference>
     <Reference Include="restlessmedia.Module.Address, Version=0.3.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\restlessmedia.Module.Address.0.3.0\lib\net452\restlessmedia.Module.Address.dll</HintPath>
     </Reference>
-    <Reference Include="restlessmedia.Module.Category, Version=0.2.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\restlessmedia.Module.Category.0.2.0\lib\net452\restlessmedia.Module.Category.dll</HintPath>
+    <Reference Include="restlessmedia.Module.Category, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\restlessmedia.Module.Category.1.1.0\lib\net452\restlessmedia.Module.Category.dll</HintPath>
     </Reference>
     <Reference Include="restlessmedia.Module.Data.EF, Version=0.4.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\restlessmedia.Module.Data.EF.0.4.0\lib\net452\restlessmedia.Module.Data.EF.dll</HintPath>
@@ -115,8 +115,8 @@
     <Reference Include="restlessmedia.Module.Security, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\restlessmedia.Module.Security.1.1.0\lib\net452\restlessmedia.Module.Security.dll</HintPath>
     </Reference>
-    <Reference Include="restlessmedia.Module.Web, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\restlessmedia.Module.Web.1.0.0\lib\net452\restlessmedia.Module.Web.dll</HintPath>
+    <Reference Include="restlessmedia.Module.Web, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\restlessmedia.Module.Web.2.0.0\lib\net452\restlessmedia.Module.Web.dll</HintPath>
     </Reference>
     <Reference Include="SqlBuilder, Version=1.10.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\SqlBuilder.1.10.0\lib\net452\SqlBuilder.dll</HintPath>

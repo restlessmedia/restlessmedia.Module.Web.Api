@@ -10,8 +10,5 @@
     <description>Web Api module</description>
     <copyright>Copyright restlessmedia 2019</copyright>
     <tags></tags>
-    <frameworkAssemblies>
-      <frameworkAssembly assemblyName="System.IO.Compression" targetFramework="" />
-    </frameworkAssemblies>
   </metadata>
 </package>

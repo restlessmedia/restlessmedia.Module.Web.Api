@@ -17,11 +17,11 @@ namespace restlessmedia.Module.Web.Api
 
       // default routes
       httpConfiguration.Routes.MapHttpRoute(
-            "DefaultApi",
+            "DefaultApi1",
             "api/{controller}/{action}"
         );
       httpConfiguration.Routes.MapHttpRoute(
-            "DefaultApi",
+            "DefaultApi2",
             "api/{controller}"
         );
     }

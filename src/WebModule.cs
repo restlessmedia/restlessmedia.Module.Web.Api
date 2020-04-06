@@ -14,22 +14,6 @@ namespace restlessmedia.Module.Web.Api
       httpConfiguration.Formatters[0] = new JsonNetFormatter(); // insert at 0 so it runs before any others
       httpConfiguration.MapHttpAttributeRoutes();
       httpConfiguration.Filters.Add(new ExceptionHandlingAttribute());
-    }
-
-    public override void OnStart(HttpConfiguration httpConfiguration, IContainer container, IEnumerable<IWebModule> webModules)
-    {
-      httpConfiguration.DependencyResolver = new AutofacWebApiDependencyResolver(container);
-    }
-
-    public override void OnStarted(HttpConfiguration httpConfiguration, IContainer container, IEnumerable<IWebModule> webModules)
-    {
-      // this ensures the less specific routes get registered last
-      Routes(httpConfiguration);
-    }
-
-    private void Routes(HttpConfiguration httpConfiguration)
-    {
-      httpConfiguration.MapHttpAttributeRoutes();
 
       // default routes
       httpConfiguration.Routes.MapHttpRoute(
@@ -40,6 +24,11 @@ namespace restlessmedia.Module.Web.Api
             "DefaultApi",
             "api/{controller}"
         );
+    }
+
+    public override void OnStart(HttpConfiguration httpConfiguration, IContainer container, IEnumerable<IWebModule> webModules)
+    {
+      httpConfiguration.DependencyResolver = new AutofacWebApiDependencyResolver(container);
     }
   }
 }

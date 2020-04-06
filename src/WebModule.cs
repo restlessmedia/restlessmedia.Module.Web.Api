@@ -3,6 +3,7 @@ using Autofac.Integration.WebApi;
 using restlessmedia.Module.Web.Api.Attributes;
 using restlessmedia.Module.Web.Api.MediaType;
 using System.Collections.Generic;
+using System.Linq;
 using System.Web.Http;
 
 namespace restlessmedia.Module.Web.Api
@@ -24,6 +25,9 @@ namespace restlessmedia.Module.Web.Api
             "DefaultApi2",
             "api/{controller}"
         );
+
+      // register controllers from all loaded wed modules
+      builder.RegisterApiControllers(webModules.Select(x => x.GetType().Assembly).ToArray());
     }
 
     public override void OnStart(HttpConfiguration httpConfiguration, IContainer container, IEnumerable<IWebModule> webModules)

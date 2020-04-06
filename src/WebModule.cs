@@ -20,5 +20,26 @@ namespace restlessmedia.Module.Web.Api
     {
       httpConfiguration.DependencyResolver = new AutofacWebApiDependencyResolver(container);
     }
+
+    public override void OnStarted(HttpConfiguration httpConfiguration, IContainer container, IEnumerable<IWebModule> webModules)
+    {
+      // this ensures the less specific routes get registered last
+      Routes(httpConfiguration);
+    }
+
+    private void Routes(HttpConfiguration httpConfiguration)
+    {
+      httpConfiguration.MapHttpAttributeRoutes();
+
+      // default routes
+      httpConfiguration.Routes.MapHttpRoute(
+            "DefaultApi",
+            "api/{controller}/{action}"
+        );
+      httpConfiguration.Routes.MapHttpRoute(
+            "DefaultApi",
+            "api/{controller}"
+        );
+    }
   }
 }

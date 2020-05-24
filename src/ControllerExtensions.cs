@@ -1,4 +1,6 @@
 ﻿using System.Web.Http.Results;
+using System.Web.Http.ModelBinding;
+using System.Net;
 
 namespace System.Web.Http
 {
@@ -16,6 +18,11 @@ namespace System.Web.Http
       }
 
       return new OkResult(controller);
+    }
+
+    public static IHttpActionResult ModelStateResult(this ApiController controller)
+    {
+      return new NegotiatedContentResult<ModelStateDictionary>(HttpStatusCode.BadRequest, controller.ModelState, controller);
     }
   }
 }

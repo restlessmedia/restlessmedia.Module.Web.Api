@@ -14,10 +14,15 @@ namespace System.Web.Http
       }
       catch (Exception e)
       {
-        return new ExceptionResult(e, controller);
+        return Error(controller, e);
       }
 
       return new OkResult(controller);
+    }
+
+    public static IHttpActionResult Error(this ApiController controller, Exception exception)
+    {
+      return new ExceptionResult(exception, controller);
     }
 
     public static IHttpActionResult ModelStateResult(this ApiController controller)

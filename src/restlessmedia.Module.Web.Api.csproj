@@ -272,6 +272,7 @@
     <Compile Include="IApiApplication.cs" />
     <Compile Include="IApiResult.cs" />
     <Compile Include="IAssembliesResolver.cs" />
+    <Compile Include="JsonFormatter.cs" />
     <Compile Include="MediaType\ApiJsonSettings.cs" />
     <Compile Include="MediaType\JsonFormatter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -20,8 +20,13 @@ namespace System.Web.Http
       return new OkResult(controller);
     }
 
-    public static IHttpActionResult Error(this ApiController controller, Exception exception)
+    public static IHttpActionResult Error(this ApiController controller, Exception exception, bool includeDetail = false)
     {
+      if (includeDetail)
+      {
+        return new ExceptionResult(exception, true, controller.Configuration.Services.GetContentNegotiator(), controller.Request, controller.Configuration.Formatters);
+      }
+
       return new ExceptionResult(exception, controller);
     }
 

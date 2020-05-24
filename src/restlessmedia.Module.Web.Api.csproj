@@ -259,6 +259,7 @@
     <Compile Include="Attributes\ExceptionHandlingAttribute.cs" />
     <Compile Include="Attributes\HttpCacheAttribute.cs" />
     <Compile Include="Attributes\WeekCacheAttribute.cs" />
+    <Compile Include="ControllerExtensions.cs" />
     <Compile Include="Extensions\HttpConfigurationExtensions.cs" />
     <Compile Include="Extensions\HttpExtensions.cs" />
     <Compile Include="Extensions\RequestMessageExtensions.cs" />

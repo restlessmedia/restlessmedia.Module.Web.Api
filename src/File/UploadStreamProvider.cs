@@ -6,7 +6,6 @@ using System.IO;
 using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
-using System.Threading;
 using System.Threading.Tasks;
 
 namespace restlessmedia.Module.Web.Api.File
@@ -24,7 +23,7 @@ namespace restlessmedia.Module.Web.Api.File
     public override Stream GetStream(HttpContent parent, HttpContentHeaders headers)
     {
       ContentDispositionHeaderValue contentDisposition = headers.ContentDisposition;
-
+       
       if (contentDisposition == null)
       {
         throw new InvalidOperationException("No content disposition");
@@ -33,14 +32,15 @@ namespace restlessmedia.Module.Web.Api.File
       return GetStream(headers);
     }
 
-    public override Task ExecutePostProcessingAsync()
+    public override async Task ExecutePostProcessingAsync()
     {
-      return TaskHelpers.Iterate(Contents.Where((HttpContent content, int index) => _isFormData[index]).Select(x =>
+      foreach (HttpContent httpContent in Contents.Where((HttpContent content, int index) => _isFormData[index]))
       {
-        ContentDispositionHeaderValue contentDisposition = x.Headers.ContentDisposition;
+        ContentDispositionHeaderValue contentDisposition = httpContent.Headers.ContentDisposition;
         string name = contentDisposition.Name.Unquote() ?? string.Empty;
-        return x.ReadAsStringAsync().Then(y => FormData.Add(name, y), default(CancellationToken), true);
-      }), default(CancellationToken), true);
+        string value = await httpContent.ReadAsStringAsync();
+        FormData.Add(name, value);
+      };
     }
 
     public Collection<MultipartFileData> FileData { get; private set; }

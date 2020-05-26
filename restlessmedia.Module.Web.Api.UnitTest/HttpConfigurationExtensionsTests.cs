@@ -1,15 +1,13 @@
-﻿using System;
-using System.Linq;
+﻿using restlessmedia.Test;
 using System.Reflection;
 using System.Web.Http;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Xunit;
 
 namespace restlessmedia.Module.Web.Api.UnitTest
 {
-  [TestClass]
   public class HttpConfigurationExtensionsTests
   {
-    //[TestMethod]
+    [Fact]
     public void AddAssembly_adds_assembly_to_underlying_service()
     {
       HttpConfiguration httpConfiguration = new HttpConfiguration();
@@ -18,7 +16,7 @@ namespace restlessmedia.Module.Web.Api.UnitTest
       httpConfiguration.AddAssembly(assembly);
 
       System.Web.Http.Dispatcher.IAssembliesResolver existingAssembliesResolver = httpConfiguration.Services.GetService(typeof(System.Web.Http.Dispatcher.IAssembliesResolver)) as System.Web.Http.Dispatcher.IAssembliesResolver;
-      existingAssembliesResolver.GetAssemblies().Single(x => x == assembly);
+      existingAssembliesResolver.GetAssemblies().Contains(assembly).MustBeTrue();
     }
   }
 }

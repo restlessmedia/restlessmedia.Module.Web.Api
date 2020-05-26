@@ -1,4 +1,5 @@
 ﻿using restlessmedia.Module.Web.Api;
+using System.Collections.Generic;
 using System.Reflection;
 
 namespace System.Web.Http
@@ -8,9 +9,13 @@ namespace System.Web.Http
     public static void AddAssembly(this HttpConfiguration httpConfiguration, Assembly assembly)
     {
       Dispatcher.IAssembliesResolver existingAssembliesResolver = GetAssembliesResolver(httpConfiguration);
-      AssembliesResolver assembliesResolver = new AssembliesResolver(existingAssembliesResolver.GetAssemblies());
-      assembliesResolver.Add(assembly);
-      httpConfiguration.Services.Replace(typeof(Dispatcher.IAssembliesResolver), assembliesResolver);
+      ICollection<Assembly> existingAssemblies = existingAssembliesResolver.GetAssemblies();
+      if (!existingAssemblies.Contains(assembly))
+      {
+        AssembliesResolver assembliesResolver = new AssembliesResolver(existingAssemblies);
+        assembliesResolver.Add(assembly);
+        httpConfiguration.Services.Replace(typeof(Dispatcher.IAssembliesResolver), assembliesResolver);
+      }
     }
 
     public static Dispatcher.IAssembliesResolver GetAssembliesResolver(this HttpConfiguration httpConfiguration)

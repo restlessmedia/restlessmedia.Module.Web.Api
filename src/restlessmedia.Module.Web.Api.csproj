@@ -5,7 +5,7 @@
     <Product>restlessmedia.Module.Web.Api</Product>
     <Description>Web Api module</Description>
     <Copyright>Copyright restlessmedia 2019</Copyright>
-    <Version>3.0.0</Version>
+    <Version>3.1.0</Version>
     <AssemblyVersion>2.0.9</AssemblyVersion>
     <FileVersion>2.0.9</FileVersion>
     <OutputPath>bin\$(Configuration)\</OutputPath>

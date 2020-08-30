@@ -40,3 +40,4 @@
     <ProjectReference Include="..\src\restlessmedia.Module.Web.Api.csproj" />
   </ItemGroup>
 </Project>
+

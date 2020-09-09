@@ -5,7 +5,7 @@
     <Product>restlessmedia.Module.Web.Api</Product>
     <Description>Web Api module</Description>
     <Copyright>Copyright restlessmedia 2020</Copyright>
-    <Version>5.0.2</Version>
+    <Version>5.0.3</Version>
     <AssemblyVersion>5.0.2</AssemblyVersion>
     <FileVersion>5.0.2</FileVersion>
     <OutputPath>bin\$(Configuration)\</OutputPath>
@@ -47,7 +47,7 @@
     <PackageReference Include="NETStandard.Library" Version="2.0.3" />
     <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
     <PackageReference Include="RazorEngine" Version="3.10.0" />
-    <PackageReference Include="restlessmedia.Module" Version="7.0.3" />
+    <PackageReference Include="restlessmedia.Module" Version="7.0.4" />
     <PackageReference Include="restlessmedia.Module.Address" Version="3.0.0" />
     <PackageReference Include="restlessmedia.Module.Category" Version="4.0.0" />
     <PackageReference Include="restlessmedia.Module.Data.EF" Version="2.0.0" />
@@ -124,3 +124,4 @@
     <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
 </Project>
+

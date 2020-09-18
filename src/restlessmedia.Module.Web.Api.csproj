@@ -51,7 +51,7 @@
     <PackageReference Include="restlessmedia.Module.Address" Version="3.0.6" />
     <PackageReference Include="restlessmedia.Module.Category" Version="4.0.4" />
     <PackageReference Include="restlessmedia.Module.Data.EF" Version="2.2.1" />
-    <PackageReference Include="restlessmedia.Module.Email" Version="2.1.1" />
+    <PackageReference Include="restlessmedia.Module.Email" Version="2.1.4" />
     <PackageReference Include="restlessmedia.Module.File" Version="2.4.5" />
     <PackageReference Include="restlessmedia.Module.Security" Version="3.1.2" />
     <PackageReference Include="restlessmedia.Module.Web" Version="5.1.8" />

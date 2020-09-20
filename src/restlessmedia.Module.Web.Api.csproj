@@ -5,9 +5,9 @@
     <Product>restlessmedia.Module.Web.Api</Product>
     <Description>Web Api module</Description>
     <Copyright>Copyright restlessmedia 2020</Copyright>
-    <Version>5.0.6</Version>
-    <AssemblyVersion>5.0.4</AssemblyVersion>
-    <FileVersion>5.0.4</FileVersion>
+    <Version>5.0.7</Version>
+    <AssemblyVersion>5.0.7</AssemblyVersion>
+    <FileVersion>5.0.7</FileVersion>
     <OutputPath>bin\$(Configuration)\</OutputPath>
     <Authors>Phil Cooper</Authors>
     <PackageId>restlessmedia.Module.Web.Api</PackageId>
@@ -54,7 +54,7 @@
     <PackageReference Include="restlessmedia.Module.Email" Version="2.1.4" />
     <PackageReference Include="restlessmedia.Module.File" Version="2.4.5" />
     <PackageReference Include="restlessmedia.Module.Security" Version="3.1.2" />
-    <PackageReference Include="restlessmedia.Module.Web" Version="5.1.8" />
+    <PackageReference Include="restlessmedia.Module.Web" Version="5.1.9" />
     <PackageReference Include="SqlBuilder" Version="2.0.1" />
     <PackageReference Include="SqlBuilder.DataServices" Version="2.0.0" />
     <PackageReference Include="StackExchange.Redis.StrongName" Version="1.2.6" />

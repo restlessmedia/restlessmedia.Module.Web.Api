@@ -47,14 +47,14 @@
     <PackageReference Include="NETStandard.Library" Version="2.0.3" />
     <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
     <PackageReference Include="RazorEngine" Version="3.10.0" />
-    <PackageReference Include="restlessmedia.Module" Version="7.0.4" />
-    <PackageReference Include="restlessmedia.Module.Address" Version="3.0.6" />
+    <PackageReference Include="restlessmedia.Module" Version="8.0.0" />
+    <PackageReference Include="restlessmedia.Module.Address" Version="4.0.0" />
     <PackageReference Include="restlessmedia.Module.Category" Version="4.0.4" />
     <PackageReference Include="restlessmedia.Module.Data.EF" Version="2.2.1" />
-    <PackageReference Include="restlessmedia.Module.Email" Version="2.1.4" />
+    <PackageReference Include="restlessmedia.Module.Email" Version="3.0.0" />
     <PackageReference Include="restlessmedia.Module.File" Version="2.4.5" />
-    <PackageReference Include="restlessmedia.Module.Security" Version="3.1.2" />
-    <PackageReference Include="restlessmedia.Module.Web" Version="5.1.9" />
+    <PackageReference Include="restlessmedia.Module.Security" Version="4.0.0" />
+    <PackageReference Include="restlessmedia.Module.Web" Version="6.0.0" />
     <PackageReference Include="SqlBuilder" Version="2.0.1" />
     <PackageReference Include="SqlBuilder.DataServices" Version="2.0.0" />
     <PackageReference Include="StackExchange.Redis.StrongName" Version="1.2.6" />

@@ -17,7 +17,6 @@ namespace restlessmedia.Module.Web.Api.MediaType
     {
       _settings = settings ?? throw new ArgumentNullException(nameof(settings));
       _encoding = encoding;
-
       SupportedMediaTypes.Add(new MediaTypeHeaderValue(ContentType.Json));
     }
 
@@ -36,18 +35,18 @@ namespace restlessmedia.Module.Web.Api.MediaType
 
     public override Task<object> ReadFromStreamAsync(Type type, Stream readStream, HttpContent content, IFormatterLogger formatterLogger)
     {
-      return Task.FromResult(JsonHelper.Deserialize(type, readStream));
+      using (StreamReader reader = new StreamReader(readStream))
+      {
+        return Task.FromResult(JsonConvert.DeserializeObject(reader.ReadToEnd(), type));
+      }
     }
 
     public override Task WriteToStreamAsync(Type type, object value, Stream writeStream, HttpContent content, TransportContext transportContext)
     {
-      JsonHelper.Serialize(value, writeStream);
+      string serializedValue = JsonConvert.SerializeObject(value, _settings);
+      byte[] data = (_encoding ?? Encoding.UTF8).GetBytes(serializedValue);
+      writeStream.Write(data, 0, data.Length);
       return Task.FromResult(writeStream);
-    }
-
-    private JsonSerializer CreateSerialiser()
-    {
-      return JsonSerializer.Create(_settings);
     }
 
     private readonly JsonSerializerSettings _settings;

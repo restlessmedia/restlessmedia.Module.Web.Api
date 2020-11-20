@@ -4,6 +4,7 @@ using restlessmedia.Module.Web.Api.Attributes;
 using restlessmedia.Module.Web.Api.MediaType;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Web.Http;
 
 namespace restlessmedia.Module.Web.Api
@@ -26,8 +27,12 @@ namespace restlessmedia.Module.Web.Api
             "api/{controller}"
         );
 
-      // register controllers from all loaded wed modules
-      builder.RegisterApiControllers(webModules.Select(x => x.GetType().Assembly).ToArray());
+      // find assemblies from all loaded web modules
+      // adding the current assembly
+      Assembly[] webModuleAssemblies = webModules.Select(x => x.GetType().Assembly).Union(GetType().Assembly).ToArray();
+
+      // register
+      builder.RegisterApiControllers(webModuleAssemblies);
     }
 
     public override void OnStart(HttpConfiguration httpConfiguration, IContainer container, IEnumerable<IWebModule> webModules)

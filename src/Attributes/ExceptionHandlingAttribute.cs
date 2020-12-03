@@ -9,8 +9,8 @@ namespace restlessmedia.Module.Web.Api.Attributes
     {
       if (context != null && context.Exception != null)
       {
-        TelemetryClient ai = new TelemetryClient();
-        ai.TrackException(context.Exception);
+        TelemetryClient client = new TelemetryClient();
+        client.TrackException(context.Exception);
       }
 
       base.OnException(context);

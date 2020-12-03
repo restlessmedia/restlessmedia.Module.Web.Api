@@ -6,10 +6,7 @@ namespace restlessmedia.Module.Web.Api.Extensions
   {
     public static bool IsAuthorized(this AuthenticationHeaderValue value, string username, string password, bool convertBase64 = true)
     {
-      string authenticationUsername;
-      string authenticationPassword;
-
-      ParseAuthCredentials(value, out authenticationUsername, out authenticationPassword, convertBase64);
+      ParseAuthCredentials(value, out string authenticationUsername, out string authenticationPassword, convertBase64);
 
       return string.Compare(authenticationUsername, username) == 0 && string.Compare(authenticationPassword, password) == 0;
     }

@@ -15,7 +15,7 @@ namespace restlessmedia.Module.Web.Api
     {
       base.OnActionExecuted(actionExecutedContext);
 
-      if(actionExecutedContext.Response != null)
+      if (actionExecutedContext.Response != null)
       {
         Options.Apply(actionExecutedContext.Response);
       }

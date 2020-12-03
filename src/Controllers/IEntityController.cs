@@ -15,15 +15,7 @@ namespace restlessmedia.Module.Web.Api.Controllers
     [Route("{source}/{sourceId}/move/{target}/{targetId}/{direction}")]
     public IHttpActionResult Move(EntityType source, int sourceId, EntityType target, int targetId, MoveDirection direction)
     {
-      try
-      {
-        _entityService.Move(source, target, sourceId, targetId, direction);
-        return Ok();
-      }
-      catch (Exception e)
-      {
-        return InternalServerError(e);
-      }
+      return this.TryResult(() => _entityService.Move(source, target, sourceId, targetId, direction));
     }
 
     [HttpPost]

@@ -161,7 +161,7 @@ namespace restlessmedia.Module.Web.Api.UnitTest.Attributes
       _cacheAttribute.OnActionExecuted(_actionExecutedContext);
 
       // assert - the cache should not be overwritten as the item was already in there
-      A.CallTo(() => _cacheProvider.Add(expectedKey, A<CacheItem>.Ignored, A<TimeSpan?>.Ignored))
+      A.CallTo(() => _cacheProvider.TryAdd(expectedKey, A<CacheItem>.Ignored, A<TimeSpan?>.Ignored))
         .MustNotHaveHappened();
     }
 
@@ -188,7 +188,7 @@ namespace restlessmedia.Module.Web.Api.UnitTest.Attributes
       _cacheAttribute.OnActionExecuted(_actionExecutedContext);
 
       // assert - the cache should not be overwritten as the item was already in there
-      A.CallTo(() => _cacheProvider.Add(expectedKey, A<CacheItem>.Ignored, A<TimeSpan?>.Ignored))
+      A.CallTo(() => _cacheProvider.TryAdd(expectedKey, A<CacheItem>.Ignored, A<TimeSpan?>.Ignored))
         .MustHaveHappened();
     }
 
@@ -215,7 +215,7 @@ namespace restlessmedia.Module.Web.Api.UnitTest.Attributes
       _cacheAttribute.OnActionExecuted(_actionExecutedContext);
 
       // assert
-      A.CallTo(() => _cacheProvider.Add(expectedKey, A<CacheItem>.Ignored, TimeSpan.FromHours(_cachedHours)))
+      A.CallTo(() => _cacheProvider.TryAdd(expectedKey, A<CacheItem>.Ignored, TimeSpan.FromHours(_cachedHours)))
         .MustHaveHappened();
     }
 
@@ -242,7 +242,7 @@ namespace restlessmedia.Module.Web.Api.UnitTest.Attributes
       _cacheAttribute.OnActionExecuted(_actionExecutedContext);
 
       // assert
-      A.CallTo(() => _cacheProvider.Add(expectedKey, A<CacheItem>.Ignored, A<TimeSpan?>.Ignored))
+      A.CallTo(() => _cacheProvider.TryAdd(expectedKey, A<CacheItem>.Ignored, A<TimeSpan?>.Ignored))
         .MustNotHaveHappened();
     }
 

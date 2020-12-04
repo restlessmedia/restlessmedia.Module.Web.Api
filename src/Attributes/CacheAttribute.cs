@@ -62,7 +62,7 @@ namespace restlessmedia.Module.Web.Api.Attributes
         if (!cacheProvider.Exists(key))
         {
           TimeSpan? expires = _hours.HasValue ? TimeSpan.FromHours(_hours.Value) : (TimeSpan?)null;
-          cacheProvider.Add(key, CreateCacheItem(actionExecutedContext.Response), expires);
+          cacheProvider.TryAdd(key, CreateCacheItem(actionExecutedContext.Response), expires);
         }
       }
 

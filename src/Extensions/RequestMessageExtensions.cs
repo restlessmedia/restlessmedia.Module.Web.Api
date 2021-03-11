@@ -41,17 +41,14 @@ namespace restlessmedia.Module.Web.Api.Extensions
         return BadRequest(request, e.GetBaseException().Message);
       }
 
-      if (done != null)
-      {
-        done(provider);
-      }
+      done?.Invoke(provider);
 
       return new OkResult(request);
     }
 
     public static string UnquotedFileName(this ContentDispositionHeaderValue contentDisposition)
     {
-      string fileName = contentDisposition != null ? contentDisposition.FileName : null;
+      string fileName = contentDisposition?.FileName;
       return string.IsNullOrEmpty(fileName) ? fileName : fileName.Trim('"');
     }
 

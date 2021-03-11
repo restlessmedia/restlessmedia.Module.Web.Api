@@ -47,7 +47,7 @@ namespace restlessmedia.Module.Web.Api.Upload
 
       string fileName = GetFileName(headers.ContentDisposition);
       FileData.Add(new MultipartFileData(headers, fileName));
-      string contentType = headers.ContentType != null ? headers.ContentType.MediaType : null;
+      string contentType = headers.ContentType?.MediaType;
       return _storageProvider.Create(_path, fileName, contentType);
     }
 

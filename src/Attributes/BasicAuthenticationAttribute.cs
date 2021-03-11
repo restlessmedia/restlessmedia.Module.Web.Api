@@ -29,10 +29,10 @@ namespace restlessmedia.Module.Web.Api.Attributes
       return actionContext.Request.Headers.Authorization.IsAuthorized(_username, _password, _isBase64);
     }
 
-    private string _username;
+    private readonly string _username;
 
-    private string _password;
+    private readonly string _password;
 
-    private bool _isBase64 = true;
+    private readonly bool _isBase64 = true;
   }
 }
